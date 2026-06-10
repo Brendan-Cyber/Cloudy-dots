@@ -1,0 +1,7 @@
+(defwindow homePanel 
+  :monitor 0
+  :geometry (geometry :x "1400px" :y "50px" :width "25%" :height "90%")
+  :stacking "bg"
+  :anchor "center"
+  :windowtype "normal"
+  "Home Panel")

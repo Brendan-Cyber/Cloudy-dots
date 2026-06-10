@@ -23,7 +23,6 @@ hl.config({
 
         layout = "dwindle",
     },
-
     decoration = {
         rounding       = 10,
         rounding_power = 2,

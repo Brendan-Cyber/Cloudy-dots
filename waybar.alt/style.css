@@ -1,0 +1,242 @@
+/* Waybar does not support :root or CSS custom properties in this style file */
+
+* {
+  border: none;
+  padding: 0;
+  min-height: 0;
+  font-family: "JetBrains Mono Nerd Font", monospace;
+  font-weight: bold;
+  font-size: 12px;
+  transition: background-color 0.3s ease-out;
+  color: #f8f8f2;
+}
+
+window#waybar {
+  background-color: transparent;
+  transition: background-color 0.5s ease;
+}
+
+#left1,
+#left2,
+.modules-center,
+#right2,
+#right1 {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  margin: 0 0 3px 0;
+  background-color: rgba(18, 18, 18, 0.88);
+  box-shadow: 0 0 2px #101010;
+  transition: background-color 0.5s ease;
+}
+
+#left1 {
+  border-radius: 16px 0 0 16px;
+  padding-left: 4px;
+}
+
+#left2 {
+  border-radius: 0 16px 16px 0;
+  margin-left: 4px;
+  padding-right: 8px;
+}
+
+.modules-center {
+  border-radius: 16px;
+}
+
+#right2 {
+  border-radius: 16px 0 0 16px;
+  padding-left: 8px;
+  margin-right: 4px;
+}
+
+#right1 {
+  border-radius: 0 16px 16px 0;
+  padding-right: 4px;
+}
+
+button {
+  box-shadow: inset 0 -3px transparent;
+  border: none;
+  border-radius: 0;
+  transition: 0.3s ease-in-out;
+}
+
+button:hover {
+  background: inherit;
+}
+
+#workspaces {
+  margin: 0;
+  padding: 0 4px 0 0;
+  transition: 0.2s ease;
+}
+
+#workspaces button label {
+  font-size: 16px;
+}
+
+#workspaces button {
+  padding: 0 4px;
+  margin: 0;
+  color: #f8f8f2;
+  opacity: 0.45;
+  font-weight: bold;
+}
+
+#workspaces button.active {
+  opacity: 1;
+}
+
+#workspaces button:hover {
+  background: transparent;
+  color: rgba(248, 248, 242, 0.4);
+  animation: ws_hover 0.2s ease-in-out 1;
+  transition: all 0.5s cubic-bezier(.55,-0.68,.48,1.682);
+}
+
+#workspaces button.empty {
+  opacity: 0.1;
+}
+
+#workspaces button.empty.active {
+  opacity: 1;
+}
+
+#memory,
+#mpris,
+#custom-expand-icon,
+#tray,
+#cpu,
+#clock,
+#battery,
+#backlight,
+#network,
+#bluetooth,
+#pulseaudio,
+#power-profiles-daemon,
+#custom-omarchy,
+#idle_inhibitor,
+#custom-idle-indicator,
+#custom-notification-silencing-indicator,
+#custom-updatespacman,
+#custom-screenrecording-indicator,
+#custom-update {
+  min-width: 12px;
+  padding: 0 4px;
+  margin: 1px 3px;
+}
+
+#custom-omarchy {
+  font-size: 14px;
+  padding-left: 0;
+}
+
+#custom-expand-icon {
+  margin-right: 0;
+  opacity: 0.5;
+}
+
+#network {
+  margin-left: 0;
+}
+
+#custom-separator {
+  opacity: 0.2;
+  padding-top: 2px;
+  padding-left: 2px;
+}
+
+tooltip {
+  padding: 4px;
+ background: rgba(16, 16, 16, 0.92);
+  border-radius: 8px;
+}
+
+tooltip label {
+  color: #f8f8f2;
+  font-weight: normal;
+}
+
+#custom-voxtype {
+  min-width: 12px;
+  margin: 0 0 0 2.5px;
+}
+
+#custom-voxtype.recording {
+  color: #a55555;
+}
+
+#custom-idle-indicator,
+#custom-notification-silencing-indicator {
+  min-width: 12px;
+  margin: 0;
+  font-size: 10px;
+  padding-bottom: 1px;
+}
+
+#custom-idle-indicator.active,
+#custom-notification-silencing-indicator.active {
+  color: #a55555;
+}
+
+#custom-screenrecording-indicator {
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  color: transparent;
+}
+
+#custom-screenrecording-indicator.active {
+  color: #eb7087;
+  animation-name: blink-recording;
+  animation-duration: 0.5s;
+}
+
+@keyframes blink-recording {
+  to {
+    color: rgba(18, 18, 18, 0.88);
+  }
+}
+
+@keyframes blink-inhibitor {
+  to {
+    color: rgba(18, 18, 18, 0.88);
+  }
+}
+
+@keyframes ws_hover {
+  from { opacity: 0.45; }
+  to { opacity: 1; }
+}
+
+#mpris {
+  color: #f8f8f2;
+  animation: blink 3s linear infinite alternate;
+}
+
+@keyframes blink {
+  to {
+    color: #4a4a4a;
+  }
+}
+#cpu.warning,
+#battery.warning {
+  color: #c95d0f;
+}
+
+@keyframes blink2 {
+  to {
+    background-color: transparent;
+    color: #f53c3c;
+  }
+}
+
+#battery.critical:not(.charging) {
+  background-color: transparent;
+  color: #e6d8ba;
+  animation-name: blink2;
+  animation-duration: 0.5s;
+  animation-timing-function: steps(12);
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}

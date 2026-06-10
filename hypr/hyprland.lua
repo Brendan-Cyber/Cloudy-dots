@@ -17,14 +17,7 @@
 -- Create your files separately and then require them like this:
 -- require("myColors")
 
----------------------
----- MY PROGRAMS ----
----------------------
 
--- Set programs that you use
-local terminal    = "kitty"
-local fileManager = "dolphin"
-local menu        = "rofi -show drun"
 
 -- modular files
 require("monitors")
