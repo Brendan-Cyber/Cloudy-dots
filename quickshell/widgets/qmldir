@@ -1,0 +1,5 @@
+module Widgets
+
+Clock Clock.qml
+Battery Battery.qml
+Audio Audio.qml
